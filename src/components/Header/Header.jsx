@@ -16,50 +16,56 @@ export const Header = () => {
 
 	return (
 		<div className={styles.headerBar}>
-			<div>
-				<Link to="/home">
-					<img
-						src={imageExporter.logo}
-						alt="logo"
-						style={{
-							width: '80px',
-							height: '80px',
-							objectFit: 'cover',
-							objectPosition: 'center',
-						}}
-					></img>
-				</Link>
-			</div>
-			<div className={styles.navBar}>
-				<Link to="/home">
-					<p
-						className={
-							location.pathname == '/home' ? styles.activeMenuItem : styles.menuItem
-						}
-					>
-						TRANG CHỦ
-					</p>
-				</Link>
-				<Link to="/land">
-					<p
-						className={
-							location.pathname == '/land' ? styles.activeMenuItem : styles.menuItem
-						}
-					>
-						MẢNH ĐẤT
-					</p>
-				</Link>
-				<Link to="/land-lease">
-					<p
-						className={
-							location.pathname == '/land-lease'
-								? styles.activeMenuItem
-								: styles.menuItem
-						}
-					>
-						THUÊ ĐẤT
-					</p>
-				</Link>
+			<div className={styles.headerWrapper}>
+				<div>
+					<Link to="/home">
+						<img
+							src={imageExporter.logo}
+							alt="logo"
+							style={{
+								width: '80px',
+								height: '80px',
+								objectFit: 'cover',
+								objectPosition: 'center',
+							}}
+						></img>
+					</Link>
+				</div>
+				<div className={styles.navBar}>
+					<Link to="/home">
+						<p
+							className={
+								location.pathname == '/home'
+									? styles.activeMenuItem
+									: styles.menuItem
+							}
+						>
+							TRANG CHỦ
+						</p>
+					</Link>
+					<Link to="/land">
+						<p
+							className={
+								location.pathname == '/land'
+									? styles.activeMenuItem
+									: styles.menuItem
+							}
+						>
+							MẢNH ĐẤT
+						</p>
+					</Link>
+					<Link to="/land-lease">
+						<p
+							className={
+								location.pathname == '/land-lease'
+									? styles.activeMenuItem
+									: styles.menuItem
+							}
+						>
+							THUÊ ĐẤT
+						</p>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

@@ -33,8 +33,9 @@
 
 /* -------------------------------- Service package section -------------------------------- */
 .servicePackage {
-	margin: 8rem 0;
+	margin: 8rem auto;
 	padding: 0 5rem;
+	max-width: 1400px;
 }
 
 .servicePackage .servicePackageTitleWrapper {
@@ -199,13 +200,14 @@
 	cursor: pointer;
 }
 
-/* -------------------------------- Advise section -------------------------------- */
+/* -------------------------------- Advise form section -------------------------------- */
 .advise {
-	margin: 8rem 0;
+	margin: 8rem auto;
 	padding: 0 5rem;
 	display: flex;
 	flex-wrap: nowrap;
 	align-content: center;
+	max-width: 1400px;
 	justify-content: space-between;
 }
 
