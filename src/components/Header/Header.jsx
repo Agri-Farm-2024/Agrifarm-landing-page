@@ -16,16 +16,14 @@ export const Header = () => {
 
 	return (
 		<div className={styles.headerBar}>
-			<div style={{width: '20%'}}>
+			<div>
 				<Link to="/home">
 					<img
 						src={imageExporter.logo}
 						alt="logo"
 						style={{
-							width: '100px',
-							height: '100px',
-							display: 'block',
-							margin: '10px auto',
+							width: '80px',
+							height: '80px',
 							objectFit: 'cover',
 							objectPosition: 'center',
 						}}

@@ -38,15 +38,7 @@ export const DefaultLayout = ({children}) => {
 	return (
 		<div style={{overflow: 'hidden'}}>
 			<Header />
-			<div
-				style={{
-					height: '100vh',
-					width: '100%',
-					backgroundColor: 'green',
-				}}
-			>
-				{children}
-			</div>
+			{children}
 			<Footer style={{textAlign: 'center'}}>
 				AgriFarm Website ©{new Date().getFullYear()} Created by AgriFarm Team
 			</Footer>
