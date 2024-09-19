@@ -1,13 +1,13 @@
 .headerBar {
 	background-color: #eaeaea;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	padding: 0 5rem;
+	gap: 30rem;
 	width: 100%;
 }
 
 .headerBar .navBar {
-	width: 80%;
 	display: flex;
 	justify-content: center;
 	align-items: center;

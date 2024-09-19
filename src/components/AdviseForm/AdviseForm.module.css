@@ -1,0 +1,39 @@
+.adviseForm {
+	width: 100%;
+	border-radius: 12px;
+	padding: 4rem 2rem;
+	padding-left: 2.3rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.adviseForm input {
+	border: none;
+	border-radius: 0;
+	border-bottom: solid 1px black;
+	outline: none;
+	height: 2.5rem;
+}
+
+.adviseForm button {
+	border: none;
+	outline: none;
+	width: 96%;
+	margin-top: 2rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	height: 4rem;
+	border-radius: 2rem;
+	margin-bottom: 2rem;
+}
+
+.adviseForm button:active {
+	border: none;
+}
+
+.adviseForm .formItem {
+	width: 49%;
+}
