@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import {Avatar, Button, FloatButton, Rate} from 'antd';
 import {AdviseForm} from '../../components/AdviseForm/AdviseForm';
+import {Link} from 'react-router-dom';
 
 const servicePackages = [
 	{
@@ -176,7 +177,7 @@ export const HomePage = () => {
 					</p>
 				</div>
 
-				<div className={styles.serviceContainer}>
+				<div className={styles.ratingContainer}>
 					{ratings.map((rating, index) => (
 						<div key={index} className={styles.ratingItemWrapper}>
 							<div className={styles.ratingItemHeader}>
@@ -210,7 +211,9 @@ export const HomePage = () => {
 							<img src={diary.image}></img>
 							<p className={styles.diaryTitle}>{diary.name}</p>
 							<p className={styles.description}>{diary.description}</p>
-							<p className={styles.readMore}>Read more</p>
+							<Link to="/cultivation-diary/1">
+								<p className={styles.readMore}>Read more</p>
+							</Link>
 						</div>
 					))}
 				</div>

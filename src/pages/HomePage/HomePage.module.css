@@ -134,9 +134,19 @@
 }
 
 /* -------------------------------- Rating section -------------------------------- */
-.serviceContainer .ratingItemWrapper {
-	width: 30rem;
-	margin-bottom: 5rem;
+.ratingContainer {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10rem;
+	gap: 0.5rem;
+}
+
+.ratingContainer .ratingItemWrapper {
+	width: 26%;
+	margin-bottom: 1rem;
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -147,23 +157,23 @@
 	border-radius: 16px;
 }
 
-.serviceContainer .ratingItemWrapper:hover {
+.ratingContainer .ratingItemWrapper:hover {
 	box-shadow: rgba(127, 182, 64, 0.5) 0px 5px 15px;
 }
 
-.serviceContainer .ratingItemWrapper .ratingItemHeader {
+.ratingContainer .ratingItemWrapper .ratingItemHeader {
 	width: 100%;
 	display: flex;
 	gap: 1rem;
 	align-items: center;
 }
 
-.serviceContainer .ratingItemWrapper .ratingItemHeader > div > p {
+.ratingContainer .ratingItemWrapper .ratingItemHeader > div > p {
 	font-size: 1.25rem;
 	font-weight: bold;
 }
 
-.serviceContainer .ratingItemWrapper > p {
+.ratingContainer .ratingItemWrapper > p {
 	color: #707070;
 }
 
