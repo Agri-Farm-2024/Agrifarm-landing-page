@@ -4,7 +4,8 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {DashboardOutlined, UserOutlined} from '@ant-design/icons';
 // import { imageExporter } from "../assets/images";
 import {Header} from '../components/Header/Header';
-const {Footer, Sider, Content} = Layout;
+import CustomFooter from '../components/Footer/Footer';
+const {Sider, Content} = Layout;
 
 // const getItem = (label, key, icon) => ({ key, icon, label });
 
@@ -38,10 +39,15 @@ export const DefaultLayout = ({children}) => {
 	return (
 		<div style={{overflow: 'hidden'}}>
 			<Header />
-			{children}
-			<Footer style={{textAlign: 'center'}}>
-				AgriFarm Website ©{new Date().getFullYear()} Created by AgriFarm Team
-			</Footer>
+			<div
+				style={{
+					minHeight: '100vh',
+					width: '100%',
+				}}
+			>
+				{children}
+			</div>
+			<CustomFooter />
 		</div>
 	);
 };
