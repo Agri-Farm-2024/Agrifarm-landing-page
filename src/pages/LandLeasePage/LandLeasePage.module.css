@@ -1,11 +1,39 @@
-.container {
-    background-color: lightblue;
-    padding: 20px;
-    border-radius: 5px;
+.advise {
+    margin: 8rem auto;
+    padding: 0 5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    max-width: 1400px;
+    justify-content: space-between;
 }
 
-.title {
-    color: darkblue;
-    font-size: 24px;
+.advise .adviseTitle {
+    width: 45%;
     font-weight: bold;
+}
+
+.advise .adviseTitle>p>div {
+    font-size: 48px;
+
+}
+
+.advise .adviseTitle>p>span:last-child {
+    color: #7fb640;
+    font-size: 48px;
+    line-height: 72px;
+    margin: 24px 0;
+}
+
+.advise .adviseTitle>p:last-child {
+    color: #707070;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.advise .adviseForm {
+    width: 50%;
 }
