@@ -17,37 +17,37 @@ export const LandPage = () => {
 			title: 'Mảnh đất số 1',
 			description:
 				'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-			image: 'https://s3-alpha-sig.figma.com/img/21bc/90f3/cfe329f86031932585db0ead10223de6?Expires=1727654400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TKBQRdIza~W0JOiuGSP~g4~E7dXbJElaZsrjKSBr997dkWA~leP2Bp2Q-p-pTikJYK52h1FdClLRzGCpvP9SQe2HdRlKnoaMDeMrctxaj58pzan2clvHFHzrogEpcORiQaLVL6Jfn4nhx89KXT3b-jp4tZd2KCclh4xQlNZEPtffmQqJIPwy3CV7ROlGm5IH2vHUSYGa4fLnJbbyokoovCFTn9pYwXuSkd2x7y-x7CJ-NoOKMx2pNMELuVdgEZLEWvu5KBVbUDuGmFz4ELsRysORqA87u2Mc7Ea-FwPgzOXZX~AzA59~n8rw10q48gaqT73cOzb5hk4GvjSdYZK82w__', // Đường dẫn hình ảnh từ imageExporter
+			image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpghttps://img.freepik.com/premium-photo/many-sprinklers-are-sprinkling-water-veggies-sizable-vegetable-field_974186-11043.jpg', // Đường dẫn hình ảnh từ imageExporter
 		},
 		{
 			title: 'Mảnh đất số 2',
 			description:
 				'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-			image: 'https://s3-alpha-sig.figma.com/img/21bc/90f3/cfe329f86031932585db0ead10223de6?Expires=1727654400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TKBQRdIza~W0JOiuGSP~g4~E7dXbJElaZsrjKSBr997dkWA~leP2Bp2Q-p-pTikJYK52h1FdClLRzGCpvP9SQe2HdRlKnoaMDeMrctxaj58pzan2clvHFHzrogEpcORiQaLVL6Jfn4nhx89KXT3b-jp4tZd2KCclh4xQlNZEPtffmQqJIPwy3CV7ROlGm5IH2vHUSYGa4fLnJbbyokoovCFTn9pYwXuSkd2x7y-x7CJ-NoOKMx2pNMELuVdgEZLEWvu5KBVbUDuGmFz4ELsRysORqA87u2Mc7Ea-FwPgzOXZX~AzA59~n8rw10q48gaqT73cOzb5hk4GvjSdYZK82w__', // Đường dẫn hình ảnh từ imageExporter
+			image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpghttps://img.freepik.com/premium-photo/many-sprinklers-are-sprinkling-water-veggies-sizable-vegetable-field_974186-11043.jpg', // Đường dẫn hình ảnh từ imageExporter
 		},
 		{
 			title: 'Mảnh đất số 3',
 			description:
 				'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-			image: 'https://s3-alpha-sig.figma.com/img/21bc/90f3/cfe329f86031932585db0ead10223de6?Expires=1727654400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TKBQRdIza~W0JOiuGSP~g4~E7dXbJElaZsrjKSBr997dkWA~leP2Bp2Q-p-pTikJYK52h1FdClLRzGCpvP9SQe2HdRlKnoaMDeMrctxaj58pzan2clvHFHzrogEpcORiQaLVL6Jfn4nhx89KXT3b-jp4tZd2KCclh4xQlNZEPtffmQqJIPwy3CV7ROlGm5IH2vHUSYGa4fLnJbbyokoovCFTn9pYwXuSkd2x7y-x7CJ-NoOKMx2pNMELuVdgEZLEWvu5KBVbUDuGmFz4ELsRysORqA87u2Mc7Ea-FwPgzOXZX~AzA59~n8rw10q48gaqT73cOzb5hk4GvjSdYZK82w__', // Đường dẫn hình ảnh từ imageExporter
+			image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpghttps://img.freepik.com/premium-photo/many-sprinklers-are-sprinkling-water-veggies-sizable-vegetable-field_974186-11043.jpg', // Đường dẫn hình ảnh từ imageExporter
 		},
 		{
 			title: 'Mảnh đất số 4',
 			description:
 				'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-			image: 'https://s3-alpha-sig.figma.com/img/21bc/90f3/cfe329f86031932585db0ead10223de6?Expires=1727654400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TKBQRdIza~W0JOiuGSP~g4~E7dXbJElaZsrjKSBr997dkWA~leP2Bp2Q-p-pTikJYK52h1FdClLRzGCpvP9SQe2HdRlKnoaMDeMrctxaj58pzan2clvHFHzrogEpcORiQaLVL6Jfn4nhx89KXT3b-jp4tZd2KCclh4xQlNZEPtffmQqJIPwy3CV7ROlGm5IH2vHUSYGa4fLnJbbyokoovCFTn9pYwXuSkd2x7y-x7CJ-NoOKMx2pNMELuVdgEZLEWvu5KBVbUDuGmFz4ELsRysORqA87u2Mc7Ea-FwPgzOXZX~AzA59~n8rw10q48gaqT73cOzb5hk4GvjSdYZK82w__', // Đường dẫn hình ảnh từ imageExporter
+			image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpghttps://img.freepik.com/premium-photo/many-sprinklers-are-sprinkling-water-veggies-sizable-vegetable-field_974186-11043.jpg', // Đường dẫn hình ảnh từ imageExporter
 		},
 		{
 			title: 'Mảnh đất số 5',
 			description:
 				'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-			image: 'https://s3-alpha-sig.figma.com/img/21bc/90f3/cfe329f86031932585db0ead10223de6?Expires=1727654400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TKBQRdIza~W0JOiuGSP~g4~E7dXbJElaZsrjKSBr997dkWA~leP2Bp2Q-p-pTikJYK52h1FdClLRzGCpvP9SQe2HdRlKnoaMDeMrctxaj58pzan2clvHFHzrogEpcORiQaLVL6Jfn4nhx89KXT3b-jp4tZd2KCclh4xQlNZEPtffmQqJIPwy3CV7ROlGm5IH2vHUSYGa4fLnJbbyokoovCFTn9pYwXuSkd2x7y-x7CJ-NoOKMx2pNMELuVdgEZLEWvu5KBVbUDuGmFz4ELsRysORqA87u2Mc7Ea-FwPgzOXZX~AzA59~n8rw10q48gaqT73cOzb5hk4GvjSdYZK82w__', // Đường dẫn hình ảnh từ imageExporter
+			image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpghttps://img.freepik.com/premium-photo/many-sprinklers-are-sprinkling-water-veggies-sizable-vegetable-field_974186-11043.jpg', // Đường dẫn hình ảnh từ imageExporter
 		},
 		{
 			title: 'Mảnh đất số 6',
 			description:
 				'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-			image: 'https://s3-alpha-sig.figma.com/img/21bc/90f3/cfe329f86031932585db0ead10223de6?Expires=1727654400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TKBQRdIza~W0JOiuGSP~g4~E7dXbJElaZsrjKSBr997dkWA~leP2Bp2Q-p-pTikJYK52h1FdClLRzGCpvP9SQe2HdRlKnoaMDeMrctxaj58pzan2clvHFHzrogEpcORiQaLVL6Jfn4nhx89KXT3b-jp4tZd2KCclh4xQlNZEPtffmQqJIPwy3CV7ROlGm5IH2vHUSYGa4fLnJbbyokoovCFTn9pYwXuSkd2x7y-x7CJ-NoOKMx2pNMELuVdgEZLEWvu5KBVbUDuGmFz4ELsRysORqA87u2Mc7Ea-FwPgzOXZX~AzA59~n8rw10q48gaqT73cOzb5hk4GvjSdYZK82w__', // Đường dẫn hình ảnh từ imageExporter
+			image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpghttps://img.freepik.com/premium-photo/many-sprinklers-are-sprinkling-water-veggies-sizable-vegetable-field_974186-11043.jpg', // Đường dẫn hình ảnh từ imageExporter
 		},
 	];
 
