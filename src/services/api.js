@@ -1,39 +1,73 @@
 import axios from 'axios';
+const API_HOST = 'http://localhost:3333';
 
-const API = 'https://fine-special-ram.ngrok-free.app/v1/api';
-let accessToken =
-	localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).token.accessToken;
+export const sendOtp = async (email) => {
+	try {
+		const response = await axios.post(
+			`${API_HOST}/auths/sendOTP?type=register`,
+			{email},
+			{
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		);
 
-let refreshToken =
-	localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).token.refreshToken;
+		console.log('OTP sent successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error sending OTP:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to send OTP');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while sending OTP');
+		}
+	}
+};
 
-let userId = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).user.id;
+export const verifyOtp = async (email, otp) => {
+	try {
+		const response = await axios.post(
+			`${API_HOST}/auths/verifyOTP?type=register`,
+			{email, otp},
+			{
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		);
 
-export const api = axios.create({
-	baseURL: API,
-	// headers: {
-	// 	authentication: accessToken,
-	// 	'x-client-id': userId,
-	// 	refresh: refreshToken,
-	// 	'ngrok-skip-browser-warning': 'true', // Add this line for ngrok skip browser warning
-	// },
-});
+		console.log('OTP verified successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error verifying OTP:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to verify OTP');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while verifying OTP');
+		}
+	}
+};
 
-// Axios response interceptor to handle token expiration and renewal
-// api.interceptors.response.use(
-// 	(response) => {
-// 		return response;
-// 	},
-// 	async (error) => {
-// 		if (error.response.status === 401) {
-// 			console.log('401 error');
-// 			window.location.href = '/login';
-// 		}
-// 		if (error.response.status === 403) {
-// 			console.log('403 error');
-// 			window.location.href = '/permission-denied';
-// 			toast.error('403 error');
-// 		}
-// 		return Promise.reject(error);
-// 	}
-// );
+export const registerUser = async (userDetails) => {
+	try {
+		const response = await axios.post(`${API_HOST}/auths/register`, userDetails, {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		console.log('User registered successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error registering user:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to register user');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while registering user');
+		}
+	}
+};
