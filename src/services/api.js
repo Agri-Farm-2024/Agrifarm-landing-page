@@ -71,3 +71,24 @@ export const registerUser = async (userDetails) => {
 		}
 	}
 };
+
+export const createRequestViewLand = async (dataForm) => {
+	try {
+		const response = await axios.post(`${API_HOST}/requests/createRequestViewLand`, dataForm, {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		console.log('createRequestViewLand successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error createRequestViewLand:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed createRequestViewLand');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while createRequestViewLands');
+		}
+	}
+};

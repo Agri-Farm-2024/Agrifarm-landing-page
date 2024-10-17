@@ -222,8 +222,8 @@ export const HomePage = () => {
 			<section className={styles.advise}>
 				<div className={styles.adviseTitle}>
 					<p>
-						<span>Điền các thông tin vào form </span>
-						<span>để xem đất canh tác</span>
+						<span>Điền các thông tin yêu cầu </span>
+						<span>để đặt lịch xem đất</span>
 					</p>
 					<p>
 						Hệ thống sẽ gửi thông tin xác nhận qua email, vui lòng kiểm tra thường xuyên
