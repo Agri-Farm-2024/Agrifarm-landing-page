@@ -1,4 +1,4 @@
-import {Button, Form, Input, DatePicker, TimePicker, message} from 'antd';
+import {Button, Form, Input, DatePicker, TimePicker} from 'antd';
 import React from 'react';
 import moment from 'moment';
 import styles from './AdviseForm.module.css';
@@ -109,10 +109,6 @@ export const AdviseForm = () => {
 				label="Giờ đến"
 				name="time"
 				rules={[
-					{
-						required: true,
-						message: 'Vui lòng chọn giờ đến!',
-					},
 					{
 						validator: validateTime,
 					},
