@@ -35,11 +35,17 @@ const CustomFooter = () => {
 							>
 								Nông Trại Agri
 							</h2>
-							<p style={{color: 'white', margin: 0, fontSize: 18}}>
-								Các ngôn ngữ châu Âu đều là thành viên của cùng một gia đình.
-							</p>
-							<p style={{color: 'white', marginBottom: 50, fontSize: 18}}>
-								Sự tồn tại tách biệt của chúng.
+							<p
+								style={{
+									color: 'white',
+									marginBottom: 50,
+									fontSize: 18,
+									width: '80%',
+								}}
+							>
+								Kết nối bạn với những mảnh đất tiềm năng, cung cấp dịch vụ thuê đất
+								toàn diện và hỗ trợ canh tác, đảm bảo sản phẩm đạt tiêu chuẩn
+								VietGAP.
 							</p>
 							<div style={{marginTop: '20px'}}>
 								<span

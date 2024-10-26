@@ -92,3 +92,49 @@ export const createRequestViewLand = async (dataForm) => {
 		}
 	}
 };
+
+export const getLandsByStatus = async (status) => {
+	console.log('getLandsByStatus: ', status);
+	try {
+		const response = await axios.get(`${API_HOST}/lands`, {
+			params: {
+				status: status === 'all' ? '' : status,
+			},
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		console.log('Fetched lands successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error fetching lands:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to fetch lands');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while fetching lands');
+		}
+	}
+};
+
+export const getLandByID = async (ID) => {
+	try {
+		const response = await axios.get(`${API_HOST}/lands/${ID}`, {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		console.log('Fetched land successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error fetching land:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to fetch lands');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while fetching lands');
+		}
+	}
+};
