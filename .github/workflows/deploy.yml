@@ -31,7 +31,7 @@ jobs:
             - name: 📂 Sync files
               uses: SamKirkland/FTP-Deploy-Action@4.0.0
               with:
-                  server: "ftp.ninhpd.vn"
+                  server: "172.96.191.49"
                   username: "agrifarm@agrifarm.ninhpd.vn"
                   password: "TVj2{q}tZB2n"
                   local-dir: dist/ # Vite outputs the build to the `dist` directory by default
