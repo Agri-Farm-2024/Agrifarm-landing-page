@@ -149,9 +149,9 @@ export const LandPage = () => {
 									{dataRender.map((item, index) => (
 										<Col key={index} xs={24} sm={12} md={8} lg={6}>
 											<LandItem
-												id={item.id}
+												id={item.land_id}
 												title={item.name}
-												description={item.description}
+												description={item.title}
 												image={item.url}
 											/>
 										</Col>

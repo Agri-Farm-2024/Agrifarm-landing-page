@@ -105,10 +105,9 @@ export const LandDetailPage = () => {
 			<div style={{padding: '0 60px'}}>
 				<Carousel style={{borderRadius: 10, overflow: 'hidden', marginBottom: 30}} autoplay>
 					{landDetail &&
-						landDetail.url
-							.filter((image) => image.type === 'image') // Filter only images
-							.map((image) => (
-								<div key={image.id}>
+						landDetail.url.map((image) => (
+							<div key={image.id}>
+								{image.type === 'image' ? (
 									<h3
 										style={{
 											height: '300px',
@@ -127,24 +126,26 @@ export const LandDetailPage = () => {
 											}}
 										/>
 									</h3>
-								</div>
-							))}
+								) : (
+									<iframe
+										width="100%"
+										height="300px"
+										src="https://www.youtube.com/embed/ky7NPNRw5yw?si=zfmpFcdltHcw3yt-"
+										title="YouTube video player"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										referrerpolicy="strict-origin-when-cross-origin"
+										allowfullscreen
+									></iframe>
+								)}
+							</div>
+						))}
 				</Carousel>
+
 				<div style={{display: 'flex'}}>
 					<div style={{width: '75%'}}>
 						<h3 style={{fontSize: '28px', margin: 0}}>{landDetail.title}</h3>
-						<p style={{fontSize: '16px', marginBottom: 30}}>{landDetail.description}</p>
-
-						{landDetail.sub_description.map((sub, index) => (
-							<div key={index}>
-								<p style={{fontSize: '16px', fontWeight: 'bold'}}>
-									{sub.sub_title}
-								</p>
-								<p style={{fontSize: '16px', marginBottom: 20}}>
-									{sub.sub_description}
-								</p>
-							</div>
-						))}
+						<div dangerouslySetInnerHTML={{__html: landDetail.description}} />
 						<ServicePackages />
 					</div>
 					<div style={{flex: 1, padding: '0 20px'}}>
