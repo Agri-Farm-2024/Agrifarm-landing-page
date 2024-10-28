@@ -32,6 +32,6 @@ jobs:
               uses: SamKirkland/FTP-Deploy-Action@4.0.0
               with:
                   server: "172.96.191.49"
-                  username: "ninhpd@wp.ninhpd.id.vn"
-                  password: "F$###TZ0B#_^"
+                  username: "ninh@wp.ninhpd.id.vn"
+                  password: "RCeqLCWp7qwO"
                   local-dir: dist/ # Vite outputs the build to the `dist` directory by default
