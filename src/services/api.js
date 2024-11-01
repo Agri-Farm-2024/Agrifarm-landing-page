@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const API_HOST = 'http://localhost:3333';
-const API_HOST = 'http://14.225.198.20:3000';
+const API_HOST = 'https://api.agrifarm.site';
 
 export const sendOtp = async (email) => {
 	try {
