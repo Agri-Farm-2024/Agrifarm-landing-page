@@ -1,3 +1,5 @@
+import {API_HOST} from '../services/api';
+
 export function formatDate(input) {
 	const date = new Date(input);
 	const year = date.getUTCFullYear();
@@ -21,4 +23,14 @@ export function convertToTimeString(input, offsetHours = 7) {
 	const seconds = String(date.getSeconds()).padStart(2, '0');
 
 	return `${hours}:${minutes}:${seconds}`;
+}
+
+export function formatNumber(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+export function convertImageURL(relativePath) {
+	console.log(relativePath);
+	const formattedPath = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
+	return `${API_HOST}${formattedPath}`;
 }
