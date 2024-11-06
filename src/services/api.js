@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const API_HOST = 'http://localhost:3333';
-const API_HOST = 'http://14.225.198.20:3000';
+export const API_HOST = 'https://api.agrifarm.site';
 
 export const sendOtp = async (email) => {
 	try {
@@ -94,17 +94,15 @@ export const createRequestViewLand = async (dataForm) => {
 	}
 };
 
-export const getLandsByStatus = async (status) => {
-	console.log('getLandsByStatus: ', status);
+export const getLandsByStatus = async ({status, page_size, page_index}) => {
+	console.log('getLandsByStatus: ', status, page_size, page_index);
+
+	const End_point =
+		status === 'all'
+			? `${API_HOST}/lands?page_size=${page_size}&page_index=${page_index}`
+			: `${API_HOST}/lands?status=${status}&page_size=${page_size}&page_index=${page_index}`;
 	try {
-		const response = await axios.get(`${API_HOST}/lands`, {
-			params: {
-				status: status === 'all' ? '' : status,
-			},
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
+		const response = await axios.get(End_point);
 
 		console.log('Fetched lands successfully:', response.data);
 		return response.data;

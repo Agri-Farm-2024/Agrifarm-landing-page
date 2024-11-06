@@ -6,6 +6,7 @@ import ServicePackages from './ServicePackages/ServicePackages';
 import {useNavigate, useParams} from 'react-router-dom';
 import {getLandByID} from '../../services/api';
 import {toast} from 'react-toastify';
+import {convertImageURL, formatNumber} from '../../utils';
 
 export const LandDetailPage = () => {
 	let navigate = useNavigate();
@@ -105,9 +106,9 @@ export const LandDetailPage = () => {
 			<div style={{padding: '0 60px'}}>
 				<Carousel style={{borderRadius: 10, overflow: 'hidden', marginBottom: 30}} autoplay>
 					{landDetail &&
-						landDetail.url.map((image) => (
-							<div key={image.id}>
-								{image.type === 'image' ? (
+						landDetail.url.map((url, index) => (
+							<div key={index}>
+								{url.type === 'image' ? (
 									<h3
 										style={{
 											height: '300px',
@@ -117,8 +118,8 @@ export const LandDetailPage = () => {
 										}}
 									>
 										<img
-											src={image.string_url}
-											alt={image.string_url}
+											src={convertImageURL(url.string_url)}
+											alt={url.string_url}
 											style={{
 												width: '100%',
 												height: '300px',
@@ -127,16 +128,15 @@ export const LandDetailPage = () => {
 										/>
 									</h3>
 								) : (
-									<iframe
-										width="100%"
-										height="300px"
-										src="https://www.youtube.com/embed/ky7NPNRw5yw?si=zfmpFcdltHcw3yt-"
-										title="YouTube video player"
-										frameborder="0"
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-										referrerpolicy="strict-origin-when-cross-origin"
-										allowfullscreen
-									></iframe>
+									<video width="100%" height="300" controls>
+										<source
+											src="https://api.agrifarm.site/uploadFile/agriFarm.mp4"
+											// src={convertImageURL(url.string_url)}
+											type="video/mp4"
+											autoplay
+										/>
+										Your browser does not support the video tag.
+									</video>
 								)}
 							</div>
 						))}
@@ -144,8 +144,11 @@ export const LandDetailPage = () => {
 
 				<div style={{display: 'flex'}}>
 					<div style={{width: '75%'}}>
-						<h3 style={{fontSize: '28px', margin: 0}}>{landDetail.title}</h3>
-						<div dangerouslySetInnerHTML={{__html: landDetail.description}} />
+						<h3 style={{fontSize: '28px', marginBottom: 20}}>{landDetail.title}</h3>
+						<div
+							dangerouslySetInnerHTML={{__html: landDetail.description}}
+							style={{width: '80%'}}
+						/>
 						<ServicePackages />
 					</div>
 					<div style={{flex: 1, padding: '0 20px'}}>
@@ -177,7 +180,7 @@ export const LandDetailPage = () => {
 								Giá thuê:
 							</span>
 							<p style={{fontWeight: 800, fontSize: 16, marginBottom: 26}}>
-								{landDetail.price_booking_per_month}/ Tháng
+								{formatNumber(landDetail.price_booking_per_month)}/ Tháng
 							</p>
 							<span style={{color: '#878680', fontWeight: 600, fontSize: 14}}>
 								Thời hạn tối thiểu :

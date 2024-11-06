@@ -11,64 +11,22 @@ const {Option} = Select;
 
 export const LandPage = () => {
 	const [loading, setLoading] = useState(true); // Trạng thái loading
-	const [currentPage, setCurrentPage] = useState(1); // Trạng thái trang hiện tại
-	const [pageSize] = useState(6); // Số lượng mảnh đất hiển thị trên mỗi trang
 	const [filterStatus, setFilterStatus] = useState('all'); // Trạng thái bộ lọc
 	const [dataRender, setDataRender] = useState([]);
-
-	// const data = [
-	// 	{
-	// 		title: 'Mảnh đất số 1',
-	// 		description:
-	// 			'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-	// 		image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpg',
-	// 		status: 'booked',
-	// 	},
-	// 	{
-	// 		title: 'Mảnh đất số 2',
-	// 		description:
-	// 			'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-	// 		image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpg',
-	// 		status: 'repairing',
-	// 	},
-	// 	{
-	// 		title: 'Mảnh đất số 3',
-	// 		description:
-	// 			'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-	// 		image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpg',
-	// 		status: 'free',
-	// 	},
-	// 	{
-	// 		title: 'Mảnh đất số 4',
-	// 		description:
-	// 			'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-	// 		image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpg',
-	// 		status: 'booked',
-	// 	},
-	// 	{
-	// 		title: 'Mảnh đất số 5',
-	// 		description:
-	// 			'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-	// 		image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpg',
-	// 		status: 'free',
-	// 	},
-	// 	{
-	// 		title: 'Mảnh đất số 6',
-	// 		description:
-	// 			'Lorem ipsum is simply free available. Aenean leoquam. Pellentesquesemornare vestibulum.',
-	// 		image: 'https://img.freepik.com/premium-photo/sunlit-vegetable-field-rural-area-irrigation-systems-sprinklers_964444-782.jpg',
-	// 		status: 'repairing',
-	// 	},
-	// ];
+	const [currentPage, setCurrentPage] = useState(1); // Trạng thái trang hiện tại
+	const [pageSize, setPageSize] = useState(8); // Số lượng mảnh đất hiển thị trên mỗi trang
+	const [totalPages, setTotalPages] = useState(1);
 
 	useEffect(() => {
-		getLandsByStatus(filterStatus)
+		setLoading(true);
+		getLandsByStatus({status: filterStatus, page_size: pageSize, page_index: currentPage})
 			.then((response) => {
 				setLoading(false);
 				if (response.statusCode === 200) {
-					setDataRender(response.metadata);
+					console.log(response.metadata);
+					setDataRender(response.metadata.lands);
+					setTotalPages(response.metadata.pagination.total_page);
 				}
-				setDataRender(response.metadata);
 				// console.log('Fetched lands successfully:', response.metadata);
 				// Handle the successful response here, such as updating state or processing the data
 			})
@@ -82,23 +40,16 @@ export const LandPage = () => {
 					console.error('Error:', error.message);
 				}
 			});
-	}, [filterStatus]);
+	}, [filterStatus, currentPage]);
 
 	const handlePageChange = (page) => {
-		setLoading(true);
 		setCurrentPage(page);
-		setTimeout(() => {
-			setLoading(false);
-		}, 1000);
+		console.log(page);
 	};
 
 	const handleFilterChange = (value) => {
-		setLoading(true);
 		setFilterStatus(value);
-		setCurrentPage(1); // Reset về trang 1 khi thay đổi bộ lọc
-		setTimeout(() => {
-			setLoading(false);
-		}, 1000);
+		setCurrentPage(1);
 	};
 
 	return (
@@ -162,14 +113,14 @@ export const LandPage = () => {
 					)}
 
 					<div style={{display: 'flex', justifyContent: 'right'}}>
-						{/* <Pagination
+						<Pagination
 							current={currentPage}
 							pageSize={pageSize}
-							total={filteredData.length}
+							total={totalPages * pageSize}
 							onChange={handlePageChange}
 							style={{marginTop: '20px'}}
 							className={styles.customPagination}
-						/> */}
+						/>
 					</div>
 				</div>
 			</Content>

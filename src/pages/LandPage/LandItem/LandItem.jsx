@@ -2,21 +2,27 @@ import React, {useEffect} from 'react';
 import {Card, Button} from 'antd';
 import {useNavigate, useParams} from 'react-router-dom';
 import {getLandByID} from '../../../services/api';
+import {convertImageURL} from '../../../utils';
 
 const {Meta} = Card;
 
 const LandItem = ({id, title, description, image}) => {
 	let navigate = useNavigate();
-	const firstImage =
-		image[0] && image[0].type === 'image'
-			? image[0].string_url
-			: 'https://th.bing.com/th/id/OIP.zY924La7IC_Yuhwjl2_3wwHaHa?w=800&h=800&rs=1&pid=ImgDetMain';
-	console.log(firstImage);
+
+	const imageFirst = image.find((item) => item.type === 'image')?.string_url;
+
+	const convertImage = convertImageURL(imageFirst);
 
 	return (
 		<Card
 			hoverable
-			cover={<img alt={title} src={firstImage} style={{width: '100%', height: 260}} />}
+			cover={
+				<img
+					alt={title}
+					src={convertImage}
+					style={{width: '100%', height: 260, objectFit: 'cover'}}
+				/>
+			}
 			style={{width: '100%'}}
 		>
 			<Meta title={title} description={description} style={{textAlign: 'left'}} />
