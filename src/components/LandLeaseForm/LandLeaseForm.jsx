@@ -18,7 +18,6 @@ export const LandLeaseForm = () => {
 		console.log('Form Submitted: ', values);
 		const userDetails = {
 			email: values.email,
-			password: 'password123',
 			full_name: values.name,
 			avatar_url: 'http://example.com/avatar.jpg',
 			dob: '1990-01-01',
@@ -42,7 +41,8 @@ export const LandLeaseForm = () => {
 		verifyOtp(values.email, Number(otp))
 			.then((data) => {
 				setIsOtpModalVisible(false);
-				console.log('OTP entered:', otp);
+				console.log('OTP entered:', top);
+				setOtp('')
 				handleSubmitForm();
 			})
 			.catch((error) => {
