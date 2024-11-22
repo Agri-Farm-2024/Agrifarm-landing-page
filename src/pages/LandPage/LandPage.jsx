@@ -4,22 +4,30 @@ import LandItem from './LandItem/LandItem';
 import Loading from '../../components/Loading/Loading';
 import styles from './LandPage.module.css';
 import {LabelPage} from '../../components/LabelPage/LabelPage';
-import {getLandsByStatus} from '../../services/api';
+import {getLandsByStatus, getListOfPlant} from '../../services/api';
 
 const {Content} = Layout;
 const {Option} = Select;
 
 export const LandPage = () => {
-	const [loading, setLoading] = useState(true); // Trạng thái loading
-	const [filterStatus, setFilterStatus] = useState('all'); // Trạng thái bộ lọc
+	const [loading, setLoading] = useState(true);
+	const [filterStatus, setFilterStatus] = useState('');
+	const [filterLandType, setFilterLandType] = useState();
 	const [dataRender, setDataRender] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1); // Trạng thái trang hiện tại
-	const [pageSize, setPageSize] = useState(8); // Số lượng mảnh đất hiển thị trên mỗi trang
+	const [currentPage, setCurrentPage] = useState(1);
+	const [pageSize, setPageSize] = useState(8);
 	const [totalPages, setTotalPages] = useState(1);
+	const [plants, setPlants] = useState([]);
+	const [plantSelected, setPlantSelected] = useState(plants[0]);
 
 	useEffect(() => {
 		setLoading(true);
-		getLandsByStatus({status: filterStatus, page_size: pageSize, page_index: currentPage})
+		getLandsByStatus({
+			status: filterStatus,
+			page_size: pageSize,
+			page_index: currentPage,
+			land_type_id: filterLandType,
+		})
 			.then((response) => {
 				setLoading(false);
 				if (response.statusCode === 200) {
@@ -40,15 +48,37 @@ export const LandPage = () => {
 					console.error('Error:', error.message);
 				}
 			});
-	}, [filterStatus, currentPage]);
+	}, [filterStatus, filterLandType, currentPage]);
+
+	useEffect(() => {
+		getListOfPlant()
+			.then((response) => {
+				console.log('List of plant: ', response.metadata?.plants);
+				setPlants(response.metadata?.plants);
+			})
+			.catch((error) => {
+				if (error.response) {
+					console.error('Error fetching lands:', error.response.data);
+				} else {
+					console.error('Error:', error.message);
+				}
+			});
+	}, []);
 
 	const handlePageChange = (page) => {
 		setCurrentPage(page);
 		console.log(page);
 	};
 
-	const handleFilterChange = (value) => {
+	const handleFilterStatusChange = (value) => {
 		setFilterStatus(value);
+		setCurrentPage(1);
+	};
+	const handleFilterPlantChange = (value) => {
+		const filterLandType = plants.filter((item) => item.plant_id === value)[0]?.land_type_id;
+		console.log(filterLandType);
+		setFilterLandType(filterLandType);
+		setPlantSelected(value);
 		setCurrentPage(1);
 	};
 
@@ -65,7 +95,24 @@ export const LandPage = () => {
 							alignItems: 'center',
 						}}
 					>
-						<h3 style={{marginRight: 20}}>Lọc theo trạng thái</h3>
+						<h3 style={{marginRight: 20}}>Mảnh đất phù hợp trồng: </h3>
+						<Select
+							placeholder="Chọn loại cây"
+							style={{
+								width: 200,
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'flex-end',
+							}}
+							onChange={handleFilterPlantChange}
+							value={plantSelected?.plant_id}
+							allowClear
+						>
+							{plants.map((plant, index) => (
+								<Option value={plant?.plant_id}>{plant.name}</Option>
+							))}
+						</Select>
+						<h3 style={{marginRight: 20, marginLeft: 20}}>Lọc theo trạng thái</h3>
 						<Select
 							placeholder="Chọn trạng thái"
 							style={{
@@ -74,11 +121,11 @@ export const LandPage = () => {
 								alignItems: 'center',
 								justifyContent: 'flex-end',
 							}}
-							onChange={handleFilterChange}
+							onChange={handleFilterStatusChange}
 							value={filterStatus}
 							allowClear
 						>
-							<Option value="all">Tất cả</Option> //edit for all
+							<Option value="">Tất cả</Option> //edit for all
 							<Option value="booked">Mảnh đất đã đặt</Option>
 							<Option value="repairing">Mảnh đất đang cải tạo</Option>
 							<Option value="free">Mảnh đất đang trống</Option>

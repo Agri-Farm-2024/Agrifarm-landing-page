@@ -94,17 +94,32 @@ export const createRequestViewLand = async (dataForm) => {
 	}
 };
 
-export const getLandsByStatus = async ({status, page_size, page_index}) => {
-	console.log('getLandsByStatus: ', status, page_size, page_index);
+export const getLandsByStatus = async ({status, page_size, page_index, land_type_id}) => {
+	console.log('getLandsByStatus: ', status, page_size, page_index, land_type_id);
 
-	const End_point =
-		status === 'all'
-			? `${API_HOST}/lands?page_size=${page_size}&page_index=${page_index}`
-			: `${API_HOST}/lands?status=${status}&page_size=${page_size}&page_index=${page_index}`;
+	const end_point = `${API_HOST}/lands?status=${status ? status : ''}&page_size=${page_size}&page_index=${page_index}&land_type_id=${land_type_id ? land_type_id : ''}`;
 	try {
-		const response = await axios.get(End_point);
+		const response = await axios.get(end_point);
 
 		console.log('Fetched lands successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
+			console.error('Error fetching lands:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to fetch lands');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while fetching lands');
+		}
+	}
+};
+
+export const getListOfPlant = async () => {
+	console.log('getListOfPlant: ');
+	try {
+		const response = await axios.get(`${API_HOST}/plants?page_size=100&page_index=1`);
+
+		console.log('Fetched getListOfPlant successfully:', response);
 		return response.data;
 	} catch (error) {
 		if (error.response) {

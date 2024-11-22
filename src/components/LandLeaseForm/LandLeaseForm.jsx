@@ -42,7 +42,7 @@ export const LandLeaseForm = () => {
 			.then((data) => {
 				setIsOtpModalVisible(false);
 				console.log('OTP entered:', top);
-				setOtp('')
+				setOtp('');
 				handleSubmitForm();
 			})
 			.catch((error) => {
@@ -174,9 +174,13 @@ export const LandLeaseForm = () => {
 				title="Nhập mã OTP - Mã này đã gửi ở Email của bạn"
 				visible={isOtpModalVisible}
 				onOk={handleOtpSubmit}
-				onCancel={() => setIsOtpModalVisible(false)}
+				onCancel={() => {
+					setIsOtpModalVisible(false);
+					setOtp('');
+				}}
 				okText="Xác nhận"
 				cancelText="Hủy"
+				maskClosable={false}
 			>
 				<div
 					style={{
