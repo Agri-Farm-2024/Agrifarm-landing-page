@@ -19,6 +19,7 @@ export const LandLeaseForm = () => {
 		const userDetails = {
 			email: values.email,
 			full_name: values.name,
+			phone: values.phone,
 			avatar_url: 'http://example.com/avatar.jpg',
 			dob: '1990-01-01',
 			role: 4,
