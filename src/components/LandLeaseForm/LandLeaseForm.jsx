@@ -20,7 +20,7 @@ export const LandLeaseForm = () => {
 			email: values.email,
 			full_name: values.name,
 			phone: values.phone,
-			avatar_url: 'http://example.com/avatar.jpg',
+			avatar_url: '/uploadFile/landrenter.png',
 			dob: '1990-01-01',
 			role: 4,
 		};
