@@ -6,7 +6,7 @@ import ServicePackages from './ServicePackages/ServicePackages';
 import {useNavigate, useParams} from 'react-router-dom';
 import {getLandByID} from '../../services/api';
 import {toast} from 'react-toastify';
-import {convertImageURL, formatNumber} from '../../utils';
+import {capitalizeFirstLetter, convertImageURL, formatNumber} from '../../utils';
 
 export const LandDetailPage = () => {
 	let navigate = useNavigate();
@@ -174,7 +174,7 @@ export const LandDetailPage = () => {
 								Mảnh Đất{' '}
 							</span>
 							<p style={{fontWeight: 800, fontSize: 16, marginBottom: 26}}>
-								{landDetail.name}
+								{capitalizeFirstLetter(landDetail.name)}
 							</p>
 							<span style={{color: '#878680', fontWeight: 600, fontSize: 14}}>
 								Giá thuê:

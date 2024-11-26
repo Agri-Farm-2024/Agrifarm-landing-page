@@ -34,3 +34,10 @@ export function convertImageURL(relativePath) {
 	const formattedPath = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
 	return `${API_HOST}${formattedPath}`;
 }
+
+export function capitalizeFirstLetter(string) {
+	if (string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+	return string;
+}

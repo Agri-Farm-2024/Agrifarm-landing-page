@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Card, Button} from 'antd';
 import {useNavigate, useParams} from 'react-router-dom';
 import {getLandByID} from '../../../services/api';
-import {convertImageURL} from '../../../utils';
+import {capitalizeFirstLetter, convertImageURL} from '../../../utils';
 
 const {Meta} = Card;
 
@@ -25,7 +25,11 @@ const LandItem = ({id, title, description, image}) => {
 			}
 			style={{width: '100%'}}
 		>
-			<Meta title={title} description={description} style={{textAlign: 'left'}} />
+			<Meta
+				title={capitalizeFirstLetter(title)}
+				description={description}
+				style={{textAlign: 'left'}}
+			/>
 			<Button
 				onClick={() => navigate(`/land-detail/${id}`)}
 				type="primary"
