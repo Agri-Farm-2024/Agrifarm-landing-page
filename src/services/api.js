@@ -144,8 +144,29 @@ export const getLandByID = async (ID) => {
 		return response.data;
 	} catch (error) {
 		if (error.response) {
+			console.error('Error fetching diary:', error.response.data);
+			throw new Error(error.response.data.message || 'Failed to fetch diary');
+		} else {
+			console.error('Error:', error.message);
+			throw new Error('An error occurred while fetching diary');
+		}
+	}
+};
+
+export const getDiaryByID = async (ID) => {
+	try {
+		const response = await axios.get(`${API_HOST}/dinaries/${ID}`, {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		console.log('Fetched diary successfully:', response.data);
+		return response.data;
+	} catch (error) {
+		if (error.response) {
 			console.error('Error fetching land:', error.response.data);
-			throw new Error(error.response.data.message || 'Failed to fetch lands');
+			throw new Error(error.response.data.message || 'Failed to fetch diary');
 		} else {
 			console.error('Error:', error.message);
 			throw new Error('An error occurred while fetching lands');

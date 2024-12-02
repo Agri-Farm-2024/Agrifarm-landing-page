@@ -63,3 +63,10 @@
 .diaryContainer .diaryContent .diaryProgress {
 	width: 60%;
 }
+
+.notFoundMessage {
+	font-size: 24px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}

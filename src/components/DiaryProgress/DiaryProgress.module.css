@@ -41,16 +41,14 @@
 	border-radius: 2rem;
 	background-color: #c4c4c4;
 	margin: 0.25rem auto;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .progress .progressbar {
-	width: 3px;
+	width: 6px;
 	height: 100%;
 	border-radius: 12px;
 	background-color: #c4c4c4;
 	margin: 0.5rem auto;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .diaryAction {
@@ -81,9 +79,16 @@
 
 .diaryAction .actionWrapper .actionDescription {
 	width: 100%;
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 	color: #707070;
+	margin-bottom: 0.5rem;
+}
+
+.diaryAction .actionWrapper .quality {
+	width: 100%;
+	font-size: 0.85rem;
 	margin-bottom: 2rem;
+	color: #707070;
 }
 
 .diaryAction .actionWrapper .imageReport {
@@ -91,6 +96,7 @@
 	display: flex;
 	gap: 1rem;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .diaryAction .actionWrapper .imageReport .imageReportItem {

@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import {API_HOST} from '../services/api';
 
 export function formatDate(input) {
@@ -31,6 +32,9 @@ export function formatNumber(number) {
 
 export function convertImageURL(relativePath) {
 	console.log(relativePath);
+	if (!relativePath) {
+		return relativePath;
+	}
 	const formattedPath = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
 	return `${API_HOST}${formattedPath}`;
 }
@@ -40,4 +44,17 @@ export function capitalizeFirstLetter(string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 	return string;
+}
+
+//Format timestamp to "DD/MM/YYYY"
+export function formatDateObj(date, formatType) {
+	if (date && formatType) {
+		if (formatType == 1) {
+			return dayjs(date).format('DD/MM');
+		}
+		if (formatType == 2) {
+			return dayjs(date).format('DD/MM/YYYY');
+		}
+	}
+	return date;
 }
