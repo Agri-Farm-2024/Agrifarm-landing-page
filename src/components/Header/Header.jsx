@@ -19,16 +19,7 @@ export const Header = () => {
 			<div className={styles.headerWrapper}>
 				<div>
 					<Link to="/home">
-						<img
-							src={imageExporter.logo}
-							alt="logo"
-							style={{
-								width: '80px',
-								height: '80px',
-								objectFit: 'cover',
-								objectPosition: 'center',
-							}}
-						></img>
+						<img src={imageExporter.logo} alt="logo" className={styles.logo}></img>
 					</Link>
 				</div>
 				<div className={styles.navBar}>
