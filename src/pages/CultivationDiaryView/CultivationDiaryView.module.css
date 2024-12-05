@@ -31,7 +31,7 @@
 }
 
 .diaryContainer {
-	width: 100%;
+	width: 95%;
 	max-width: 1400px;
 	padding: 3rem 2rem;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -62,4 +62,67 @@
 
 .diaryContainer .diaryContent .diaryProgress {
 	width: 60%;
+}
+
+.notFoundMessage {
+	font-size: 24px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	/* Styles for tablets and smaller screens */
+	.diaryContainer {
+		width: 90%;
+		padding: 3rem 1rem;
+	}
+
+	.diaryContainer .diaryTitle {
+		font-size: 1.25rem;
+	}
+
+	.diaryContainer .diaryContent .diaryInfo {
+		font-size: 0.75rem;
+		gap: 0.5rem;
+	}
+
+	.diaryContainer .diaryContent {
+		flex-direction: column;
+	}
+
+	.diaryContainer .diaryContent .diaryInfo {
+		border-right: none;
+		border-bottom: 3px solid #d9d9d9;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		width: 90%;
+	}
+	.diaryContainer .diaryContent .diaryProgress {
+		width: 100%;
+	}
+	.headerBanner {
+		height: 15rem;
+	}
+	.headerBanner .titleBanner {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Styles for mobile screens */
+	.diaryContainer {
+		width: 85%;
+		padding: 2rem 1rem;
+	}
+	.diaryContainer .diaryTitle {
+		font-size: 1rem;
+	}
+	.diaryContainer .diaryContent .diaryInfo {
+		font-size: 0.6rem;
+		gap: 0.25rem;
+	}
+	.headerBanner .titleBanner {
+		font-size: 1.25rem;
+	}
 }
