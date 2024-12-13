@@ -26,18 +26,20 @@ const CustomFooter = () => {
 								toàn diện và hỗ trợ canh tác, đảm bảo sản phẩm đạt tiêu chuẩn
 								VietGAP.
 							</p>
-							<span className={styles['social-icons']}>
-								<CameraOutlined className={styles.icon} />
-							</span>
-							<span className={styles['social-icons']}>
-								<EnvironmentOutlined className={styles.icon} />
-							</span>
-							<span className={styles['social-icons']}>
-								<FacebookOutlined className={styles.icon} />
-							</span>
-							<span className={styles['social-icons']}>
-								<BehanceOutlined className={styles.icon} />
-							</span>
+							<div className={styles.socialContainer}>
+								<span className={styles['social-icons']}>
+									<CameraOutlined className={styles.icon} />
+								</span>
+								<span className={styles['social-icons']}>
+									<EnvironmentOutlined className={styles.icon} />
+								</span>
+								<span className={styles['social-icons']}>
+									<FacebookOutlined className={styles.icon} />
+								</span>
+								<span className={styles['social-icons']}>
+									<BehanceOutlined className={styles.icon} />
+								</span>
+							</div>
 						</div>
 					</Col>
 
@@ -49,11 +51,11 @@ const CustomFooter = () => {
 								<MailOutlined /> agrifarm2024@gmail.com
 							</p>
 							<p>
-								<EnvironmentOutlined /> Tòa nhà Riverside, County Hall, London SE1
-								7PB, Vương Quốc Anh
+								<EnvironmentOutlined /> Ấp Trung Tâm xã Thanh Bình huyện Trảng Bom
+								tỉnh Đồng Nai
 							</p>
 							<p>
-								<PhoneOutlined /> 451-484-5939
+								<PhoneOutlined /> (028) 7300 5588
 							</p>
 						</div>
 					</Col>
