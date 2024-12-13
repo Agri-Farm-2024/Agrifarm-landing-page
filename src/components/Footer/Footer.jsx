@@ -120,11 +120,11 @@ const CustomFooter = () => {
 								<MailOutlined /> agrifarm2024@gmail.com
 							</p>
 							<p style={{color: 'white', margin: '16px 0'}}>
-								<EnvironmentOutlined /> Tòa nhà Riverside, County Hall, London SE1
-								7PB, Vương Quốc Anh
+								<EnvironmentOutlined /> Ấp Trung Tâm xã Thanh Bình huyện Trảng Bom
+								tỉnh Đồng Nai
 							</p>
 							<p style={{color: 'white', margin: '16px 0'}}>
-								<PhoneOutlined /> 451-484-5939
+								<PhoneOutlined /> (028) 7300 5588
 							</p>
 						</div>
 					</Col>
