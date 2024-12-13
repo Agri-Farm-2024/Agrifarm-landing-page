@@ -44,8 +44,8 @@ export const CultivationDiaryView = () => {
 					<p className={styles.diaryTitle}>
 						{`
 							Nhật ký trồng ${diary?.service_specific?.plant_season?.plant?.name} 
-							${formatDateObj(diary?.process_technical_specific_stage[0]?.time_start, 1)}-
-							${formatDateObj(diary?.process_technical_specific_stage[diary?.process_technical_specific_stage?.length - 1]?.time_end, 1)}`}
+							${formatDateObj(diary?.time_start, 1)}-
+							${formatDateObj(diary?.time_end, 1)}`}
 					</p>
 					<div className={styles.diaryContent}>
 						<div className={styles.diaryInfo}>
