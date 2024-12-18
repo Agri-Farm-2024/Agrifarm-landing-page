@@ -31,20 +31,20 @@ const servicePackages = [
 
 const procedures = [
 	{
-		image: 'https://static1.backyardbossimages.com/wordpress/wp-content/uploads/2022/12/Cantaloupe-on-a-trellis.jpg',
-		title: 'Dưa lưới',
+		image: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/L%C3%A1_v%C3%A0_qu%E1%BA%A3_c%C3%A0_t%C3%ADm.jpg',
+		title: 'Cà tím',
 	},
 	{
-		image: 'https://agric4profits.com/wp-content/uploads/2023/12/images-2-5.jpeg',
-		title: 'Ngô',
+		image: 'https://nongsanhaugiang.com.vn/images/10012020/49f375da34844c5cd2271a72736c7005.jpg',
+		title: 'Khổ qua',
 	},
 	{
-		image: 'https://cdn.tgdd.vn/2021/08/content/2.2-800x450-2.jpg',
-		title: 'Bí đỏ',
+		image: 'https://images.baodantoc.vn/uploads/2020/Th%C3%A1ng_12/Ng%C3%A0y%201/Thanh/21bcd1d6c33a91657f14828f444e8fac.jpg',
+		title: 'Đậu bắp',
 	},
 	{
-		image: 'https://caythuoc.org/wp-content/uploads/2019/05/Cay-rau-bap-cai.jpg',
-		title: 'Bắp cải',
+		image: 'https://file.hstatic.net/1000386738/file/z3617147747771_754c57bcf82f918b7b34fe3c57e3d1c5_30ca217c6dbb4f1cb81f2c682f2a2e92_grande.jpg',
+		title: 'Dưa leo',
 	},
 ];
 
@@ -54,42 +54,42 @@ const ratings = [
 		name: 'Charlie Leuschke',
 		starNumber: 5,
 		ratingContent:
-			'Phasellus fermentum orci non nunc fermentum mattis. In eleifend vehicula justo, sed pulvinar erat scelerisque vel. Vestibulum eu erat elit. Etiam mattis feugiat finibus.',
+			'Trang trại thật sạch sẽ, không khí trong lành. Rau củ quả tươi ngon, đúng chuẩn hữu cơ. Nhân viên thân thiện và hỗ trợ tận tình!',
 	},
 	{
 		avatar: 'https://i.pinimg.com/564x/0a/6d/fa/0a6dfadd10cd91972a20b6e03e7f6ee6.jpg',
 		name: 'Luke Glover',
 		starNumber: 5,
 		ratingContent:
-			'Phasellus fermentum orci non nunc fermentum mattis. In eleifend vehicula justo, sed pulvinar erat scelerisque vel. Vestibulum eu erat elit. Etiam mattis feugiat finibus.',
+			'Tôi rất ấn tượng với chất lượng sản phẩm ở đây. Dịch vụ tốt, trang trại được chăm sóc kỹ lưỡng. Rất đáng để ghé thăm!',
 	},
 	{
 		avatar: 'https://i.pinimg.com/564x/6d/63/e0/6d63e0aba7529d07dac5fbe5a6f37613.jpg',
 		name: 'Roderick Schumm',
 		starNumber: 5,
 		ratingContent:
-			'Phasellus fermentum orci non nunc fermentum mattis. In eleifend vehicula justo, sed pulvinar erat scelerisque vel. Vestibulum eu erat elit. Etiam mattis feugiat finibus.',
+			'Trải nghiệm thú vị! Các loại rau củ được trồng tự nhiên, hương vị rất tươi ngon. Sẽ quay lại lần sau.',
 	},
 	{
 		avatar: 'https://i.pinimg.com/564x/ca/81/08/ca810811f3e85220193f9afdbeb3f7a9.jpg',
 		name: 'Brandi Boyle',
 		starNumber: 5,
 		ratingContent:
-			'Phasellus fermentum orci non nunc fermentum mattis. In eleifend vehicula justo, sed pulvinar erat scelerisque vel. Vestibulum eu erat elit. Etiam mattis feugiat finibus.',
+			'Mình rất thích không gian ở trang trại, thoáng đãng và yên bình. Sản phẩm thì tuyệt vời, giá cả lại hợp lý!',
 	},
 	{
 		avatar: 'https://i.pinimg.com/564x/47/91/f0/4791f027dcad85f85883359daf191c5d.jpg',
 		name: 'Scott Runolfsdottir',
 		starNumber: 5,
 		ratingContent:
-			'Phasellus fermentum orci non nunc fermentum mattis. In eleifend vehicula justo, sed pulvinar erat scelerisque vel. Vestibulum eu erat elit. Etiam mattis feugiat finibus.',
+			'Trang trại được tổ chức rất chuyên nghiệp. Các sản phẩm như sữa, rau củ đều rất tươi và ngon. Sẽ giới thiệu cho bạn bè!',
 	},
 	{
 		avatar: 'https://i.pinimg.com/564x/64/32/16/6432169e11146bfecba528cdfdc02b57.jpg',
 		name: 'Claire Witting',
 		starNumber: 5,
 		ratingContent:
-			'Phasellus fermentum orci non nunc fermentum mattis. In eleifend vehicula justo, sed pulvinar erat scelerisque vel. Vestibulum eu erat elit. Etiam mattis feugiat finibus.',
+			'Một nơi lý tưởng để mua thực phẩm sạch. Rất yên tâm về chất lượng sản phẩm. Nhân viên hỗ trợ nhiệt tình, mình rất hài lòng!',
 	},
 ];
 
@@ -98,19 +98,19 @@ const diaries = [
 		image: 'https://www.fao.org.vn/wp-content/uploads/2020/11/ky-thuat-trong-bap-cai-tai-nha.jpg',
 		name: 'Nhật ký trồng cây cải theo chuẩn VietGAP',
 		description:
-			'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica.',
+			'Hướng dẫn chi tiết kỹ thuật trồng cây cải theo chuẩn VietGAP, đảm bảo chất lượng và an toàn cho sức khỏe người tiêu dùng.',
 	},
 	{
 		image: 'https://s3-eu-west-1.amazonaws.com/yara-links/h0q6.jpg',
 		name: 'Nhật ký trồng dâu tây theo chuẩn VietGAP',
 		description:
-			'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica.',
+			'Các phương pháp trồng dâu tây chuẩn VietGAP, đảm bảo hương vị thơm ngon, tươi sạch và an toàn cho sức khỏe.',
 	},
 	{
-		image: 'https://ep.edu.vn/cach-trong-dua-hau-bang-hat/imager_14879.jpg',
-		name: 'Nhật ký trồng dưa hấu theo chuẩn VIetGAP',
+		image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoAtZ3nCPLz5uGYcZViXrgr3y6ihiJ_OUesA&s',
+		name: 'Nhật ký trồng dưa hấu theo chuẩn VietGAP',
 		description:
-			'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica.',
+			'Kỹ thuật trồng dưa hấu theo tiêu chuẩn VietGAP, giúp sản phẩm đạt chất lượng tối ưu, an toàn và tự nhiên nhất.',
 	},
 ];
 
@@ -156,11 +156,13 @@ export const HomePage = () => {
 								className={styles.procedureImg}
 								src={procedure.image}
 								alt="ảnh quy trình"
+								width={200}
+								height={200}
 							></img>
 							<p className={styles.serviceTitle}>{procedure.title}</p>
-							<Button type="primary" className={styles.procedureBtn}>
+							{/* <Button type="primary" className={styles.procedureBtn}>
 								Đọc thêm
-							</Button>
+							</Button> */}
 						</div>
 					))}
 				</div>

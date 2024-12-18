@@ -28,8 +28,5 @@ jobs:
                       # Step 2: Pull latest changes from the Git repository
                       git pull
 
-                      # Step 3: Stop container and remove image
-                      docker-compose down --rmi all
-
-                      # Step 4: Add environment variables
+                      # Step 3: Rebuild compose
                       docker-compose up --build -d
