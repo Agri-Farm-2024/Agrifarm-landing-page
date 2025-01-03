@@ -108,7 +108,7 @@ export const LandLeaseForm = () => {
 							message: 'Vui lòng không bỏ trống!',
 						},
 						{
-							pattern: /^[0-9]{9,11}$/,
+							pattern: /^[0-9]{10,11}$/,
 							message: 'Vui lòng nhập số điện thoại hợp lệ!',
 						},
 					]}
